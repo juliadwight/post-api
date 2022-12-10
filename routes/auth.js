@@ -34,18 +34,18 @@ router.post('/api/login', async (req, res) => {
 
 // Register a new user
 router.post('/api/register', async (req, res) => {
-  const { username, password: plainTextPassword } = req.body
+  const { username, password: textPassword } = req.body
 
-  // Check if username and password are string
+  // Check if username and password are strings and exist
   if (!username || typeof username !== 'string') {
     return res.status(401).json({ status: 'error', error: 'Invalid username' })
   }
-  if (!plainTextPassword || typeof plainTextPassword !== 'string') {
+  if (!textPassword || typeof textPassword !== 'string') {
     return res.status(401).json({ status: 'error', error: 'Invalid password' })
   }
 
   // Check if password is between 7 and 50 characters
-  if (plainTextPassword.length < 7 || plainTextPassword.length > 50) {
+  if (textPassword.length < 7 || textPassword.length > 50) {
     return res.status(401).json({
       status: 'error',
       error: 'Password should be between 7 and 50 characters'
