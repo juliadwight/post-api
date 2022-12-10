@@ -1,29 +1,17 @@
 ## Summary
+Backend for registering a user and signing in.
+Able to make, change, and delete posts.
 
-
-## Installation
-
+## Procedure
 Using npm
 
 ```
 npm install
+
 node server.js
+
 ```
 
-## API documentation
+Run unit tests with Postman
+https://www.postman.com/universal-escape-311950/workspace/speer-test/collection/24855416-28f5d717-b545-4bbf-a946-bd9ac76cf274?action=share&creator=24855416
 
-### Routes
-
-Here is the API address: https://aircall-job.herokuapp.com.
-
-As you can see, it's hosted on a free Heroku server, which means that the first time you will fetch the API, it will take few seconds to answer.
-
-- **GET** - https://aircall-job.herokuapp.com/activities: get calls to display in the Activity Feed
-- **GET** - https://aircall-job.herokuapp.com/activities/:id: retrieve a specific call details
-- **POST** - https://aircall-job.herokuapp.com/activities/:id: update a call. The only field updatable is `is_archived (bool)`. You'll need to send a JSON in the request body:
-```
-{
-  is_archived: true
-}
-```
-- **GET** - https://aircall-job.herokuapp.com/reset: Reset all calls to initial state (usefull if you archived all calls).
