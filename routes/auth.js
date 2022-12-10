@@ -26,7 +26,7 @@ router.post('/api/login', async (req, res) => {
       JWT_SECRET
     )
     // Return JWT token
-    return res.status(200).json({ status: 'ok', data: token })
+    return res.status(200).json({ status: 'ok', message: "Logged in as " + user.username, data: token })
   }
 
   res.status(401).json({ status: 'error', error: 'Invalid username or password' })
@@ -53,7 +53,7 @@ router.post('/api/register', async (req, res) => {
   }
 
   // Hash the password
-  const password = await bcrypt.hash(plainTextPassword, 10)
+  const password = await bcrypt.hash(textPassword, 10)
 
   // Create the user in database
   try {
